@@ -7,26 +7,26 @@ function updateTime() {
 
   aucklandDateElement.innerHTML = aucklandTime.format("Do MMMM YYYY");
   aucklandTimeElement.innerHTML = aucklandTime.format(
-    "h:mm:ss [<small>]A[</small>]"
+    "hh:mm:ss [<small>]A[</small>]"
   );
 
   // Paris
   let parisElement = document.querySelector("#paris");
   let parisDateElement = parisElement.querySelector(".date");
-  let parisTimeElement =  parisElement.querySelector(".time");
+  let parisTimeElement =  parisElement.querySelector(".time"); 
   let  parisTime = moment().tz("Europe/Paris");
 
   parisDateElement.innerHTML = parisTime.format("Do MMMM YYYY");
   parisTimeElement.innerHTML = parisTime.format(
-    "h:mm:ss [<small>]A[</small>]"
+    "hh:mm:ss [<small>]A[</small>]"
   );
 }
 
 updateTime();
 setInterval(updateTime, 1000);
 
-function updateCity(event) {
-  let cityTimezone = event.target.value;
+function updateCity() {
+  if (!cityTimezone) return;
   if (cityTimezone === "current") {
     cityTimezone = moment.tz.guess();
   }
@@ -39,11 +39,17 @@ function updateCity(event) {
       <h2>${cityName}</h2>
       <div class="date">${cityTime.format("Do MMMM YYYY")}</div>
     </div>
-    <div class="time">${cityTime.format("h:mm:ss")}<small>${cityTime.format("A")}</small></div>
+    <div class="time">${cityTime.format("h:mm:ss")} <small> ${cityTime.format("A")} </small></div>
   </div>
+  <a href="index.html">Go back</a>
   `;
-
 }
 
 let citiesSelectElement = document.querySelector("#city");
-citiesSelectElement.addEventListener("change", updateCity);
+citiesSelectElement.addEventListener("change", function (event) {
+  cityTimezone = event.target.value;
+  updateCity();
+});
+
+setInterval(updateCity, 1000);
+

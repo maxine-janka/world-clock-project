@@ -1,5 +1,7 @@
 body {
-  background-color: antiquewhite;
+  background-color: #D0CEC2;
+  font-family: "DM Serif Display", serif;
+  color: #2b281b;
 }
 
 h1 {
@@ -13,24 +15,38 @@ h2 {
 }
 
 select {
+  background-color: #eae8dc;
+  border: none;
   display: block;
   width: 100%;
   border-radius: 8px;
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
 }
 
 footer {
   text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  margin-top: 52px;
+  margin-bottom: 22px;
 }
 
+img {
+  max-width: 250px;
+  display: block;
+  margin: 48px auto 0;
+}
+
+a {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #2b281b;
+}
 .container {
   max-width: 600px;
-  margin: 60px auto;
-  background-color: pink;
-  padding: 50px;
-  border-radius: 8px;
-  
+  margin: 0 auto;
+  background-color: #D0CEC2;
 }
 
 .city {
@@ -38,7 +54,7 @@ footer {
   justify-content: space-between;
   margin: 10px 0;
   padding: 30px 0;
-  border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .city:last-child {
@@ -56,6 +72,10 @@ footer {
 }
 
 .date {
-  opacity: 0.7;
+  font-family: "Poppins", sans-serif;
+  opacity: 0.8;
 }
 
+.footer-links {
+  font-size: 12px;
+}
