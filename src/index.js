@@ -41,7 +41,7 @@ function updateCity() {
     </div>
     <div class="time">${cityTime.format("h:mm:ss")} <small> ${cityTime.format("A")} </small></div>
   </div>
-  <a href="index.html">Go back</a>
+  <a href="/">Go back</a>
   `;
 }
 
